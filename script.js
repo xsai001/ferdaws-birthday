@@ -75,8 +75,27 @@ const endTime = Date.now() + duration;
                 }, 1500);
             }
 
-        }, 35);
+                }, 35);
 
     }, 500);
 
 };
+
+// ⬇️ حطها هنا، تحت آخر };
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+
+}
