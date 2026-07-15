@@ -72,6 +72,10 @@ const endTime = Date.now() + duration;
 
                     message.appendChild(end);
 
+setInterval(createHeart, 400);
+
+}, 1500);
+
                 }, 1500);
             }
 
