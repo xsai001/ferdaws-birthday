@@ -7,26 +7,40 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="loading">
-    <div class="heart">💖</div>
-    <h1>Preparing your surprise...</h1>
-</div>
+    <!-- Loading -->
+    <div id="loading">
+        <div class="heart">💖</div>
+        <h1>Preparing your surprise...</h1>
+    </div>
 
-<div id="main" style="display:none;">
-    <div id="gift">🎁</div>
-    <p>Tap the Gift ❤️</p>
-</div>
+    <!-- Gift -->
+    <div id="main" style="display:none;">
+        <div id="gift">🎁</div>
+        <p>Tap the Gift ❤️</p>
+    </div>
 
-<div id="message" style="display:none;">
-    <h1>🎂 Happy Birthday Princess ❤️</h1>
-    <p id="text"></p>
-</div>
+    <!-- Birthday Message -->
+    <div id="message" style="display:none;">
+        <h1>🎂 Happy Birthday Princess ❤️</h1>
+        <p id="text"></p>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
+    <!-- Marriage Proposal -->
+    <div id="proposal" style="display:none;">
+        <h1>💍 Will you marry me? 💍</h1>
+
+        <p>Do you want to marry me? ❤️</p>
+
+        <div class="buttons">
+            <button id="yes">💖 Yes</button>
+            <button id="no">🙈 No</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
