@@ -29,36 +29,32 @@ gift.onclick = () => {
 
             if (i >= msg.length) {
 
-    clearInterval(typing);
+                clearInterval(typing);
 
-    alert("Message Finished");
+                const duration = 3000;
+                const endTime = Date.now() + duration;
 
-   const duration = 3000;
-const endTime = Date.now() + duration;
+                (function frame() {
+                    confetti({
+                        particleCount: 5,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0 }
+                    });
 
-(function frame() {
-    confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
-    });
+                    confetti({
+                        particleCount: 5,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1 }
+                    });
 
-    confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
-    });
+                    if (Date.now() < endTime) {
+                        requestAnimationFrame(frame);
+                    }
+                })();
 
-    if (Date.now() < endTime) {
-        requestAnimationFrame(frame);
-    }
-})();
-    });
-
-    // 👑 الرسالة الأخيرة
-    setTimeout(() => {
+                setTimeout(() => {
 
                     const end = document.createElement("div");
 
@@ -72,20 +68,19 @@ const endTime = Date.now() + duration;
 
                     message.appendChild(end);
 
-setInterval(createHeart, 400);
-
-}, 1500);
+                    setInterval(createHeart, 400);
 
                 }, 1500);
+
             }
 
-                }, 35);
+        }, 35);
 
     }, 500);
 
 };
 
-function createHeart(){
+function createHeart() {
 
     const heart = document.createElement("div");
 
@@ -100,6 +95,4 @@ function createHeart(){
     setTimeout(() => {
         heart.remove();
     }, 6000);
-
-}
 }
