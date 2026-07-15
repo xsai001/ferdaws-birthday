@@ -11,7 +11,8 @@ window.addEventListener("load", () => {
 
 });
 
-gift.onclick = () => {
+gift.onclick = () => {document.querySelector(".lid").style.transform =
+"translateY(-90px) rotate(-20deg)";
 
     gift.style.transform = "scale(1.2)";
 
