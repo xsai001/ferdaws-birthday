@@ -1,2 +1,3 @@
-setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['💖','💕','❤️'][Math.floor(Math.random()*3)];h.style.left=Math.random()*100+'vw';document.body.appendChild(h);setTimeout(()=>h.remove(),6000);},400);
-document.getElementById('startBtn').onclick=()=>alert('Next version coming soon ❤️');
+const message=`بنتي الحبيبة 🤍، باباك كيبغيك بزاف. ما تتصوريش شحال أنا فرحان حيث نتي معايا. والله كنتمنا ليك عيد ميلاد زوين، وإن شاء الله المرة الجاية غادي نكونو مجموعين ونحتافلو كاملين. الله يخليك ليا يا حبيبة باباك، ويحفظك ويخليك ديما فرحانة. كنحبك بزاف بزاف. ❤️🎂`;
+setTimeout(()=>{loading.classList.add('hide');main.classList.remove('hide')},2000);
+gift.onclick=()=>{gift.style.transform='scale(1.2)';setTimeout(()=>{main.classList.add('hide');msg.classList.remove('hide');let i=0;const t=setInterval(()=>{text.textContent+=message[i++]||'';if(i>message.length)clearInterval(t)},35)},800)}
