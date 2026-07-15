@@ -7,10 +7,15 @@ const text = document.getElementById("text");
 const message = `بنتي الحبيبة 🤍، باباك كيبغيك بزاف. ما تتصوريش شحال أنا فرحان حيث نتي معايا. والله كنتمنا ليك عيد ميلاد زوين، وإن شاء الله المرة الجاية غادي نكونو مجموعين ونحتافلو كاملين. الله يخليك ليا يا حبيبة باباك، ويحفظك ويخليك ديما فرحانة. كنحبك بزاف بزاف. ❤️🎂`;
 
 window.addEventListener("load", () => {
+
     setTimeout(() => {
-        loading.classList.add("hide");
-        main.classList.remove("hide");
+
+        loading.style.display = "none";
+        main.style.display = "flex";
+
     }, 2500);
+
+});
 });
 
 gift.onclick = () => {
