@@ -1,0 +1,1 @@
+Replace photo.jpg with your own photo.
