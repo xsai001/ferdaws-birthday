@@ -1,1 +1,68 @@
-body{margin:0;font-family:Arial;background:#fff0f6;text-align:center}#loading,#main,#message{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}#loading{background:linear-gradient(135deg,#fff0f6,#ffd9ea,#ffc2dc)}.heart{font-size:70px;animation:beat 1s infinite}#gift{font-size:100px;cursor:pointer}@keyframes beat{50%{transform:scale(1.2)}}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#fff0f6,#ffd9ea,#ffc2dc);
+    overflow:hidden;
+    text-align:center;
+}
+
+#loading,#main,#message{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.heart{
+    font-size:70px;
+    animation:beat 1s infinite;
+}
+
+#gift{
+    font-size:110px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#gift:hover{
+    transform:scale(1.15) rotate(-8deg);
+}
+
+h1{
+    font-size:55px;
+}
+
+#text{
+    max-width:900px;
+    font-size:26px;
+    line-height:2;
+    direction:rtl;
+    padding:20px;
+}
+
+@keyframes beat{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+/* 💖 Hearts */
+.floating-heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:25px;
+    animation:floatUp 6s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
