@@ -11,8 +11,34 @@ window.addEventListener("load", () => {
 
 });
 
-gift.onclick = () => {document.querySelector(".lid").style.transform =
-"translateY(-90px) rotate(-20deg)";
+gift.onclick = () => {
+
+    document.querySelector(".lid").style.transform =
+        "translateY(-90px) rotate(-20deg)";
+
+    gift.style.transform = "scale(1.2)";
+
+    setTimeout(() => {
+
+        main.classList.add("hide");
+        msg.classList.remove("hide");
+
+        let i = 0;
+
+        const typing = setInterval(() => {
+
+            text.textContent += message[i] || "";
+            i++;
+
+            if (i >= message.length) {
+                clearInterval(typing);
+            }
+
+        }, 35);
+
+    }, 700);
+
+};
 
     gift.style.transform = "scale(1.2)";
 
