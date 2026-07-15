@@ -1,1 +1,65 @@
-body{margin:0;font-family:Arial;background:#fff0f6;text-align:center}#loading,#msg,#main{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh}.hide{display:none}#gift{font-size:100px;cursor:pointer;transition:.4s}
+body{
+    margin:0;
+    font-family:"Poppins",sans-serif;
+    background:#fff0f6;
+    text-align:center;
+}
+
+#loading-screen,
+#msg,
+#main{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.hide{
+    display:none;
+}
+
+#loading-screen{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#fff0f6,#ffd9ea,#ffc2dc);
+    z-index:9999;
+    transition:opacity 1s;
+}
+
+.loader-heart{
+    font-size:70px;
+    animation:heartBeat 1.2s infinite;
+}
+
+#loading-screen h1{
+    color:#d63384;
+    font-size:28px;
+    margin:15px 0 10px;
+}
+
+#loading-screen p{
+    color:#666;
+}
+
+#gift{
+    font-size:100px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#gift:hover{
+    transform:scale(1.1);
+}
+
+#msg h1{
+    color:#ff4f9a;
+}
+
+@keyframes heartBeat{
+    0%{transform:scale(1);}
+    25%{transform:scale(1.2);}
+    50%{transform:scale(.95);}
+    75%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
