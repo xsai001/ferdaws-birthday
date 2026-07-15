@@ -85,7 +85,6 @@ setInterval(createHeart, 400);
 
 };
 
-// ⬇️ حطها هنا، تحت آخر };
 function createHeart(){
 
     const heart = document.createElement("div");
@@ -102,4 +101,5 @@ function createHeart(){
         heart.remove();
     }, 6000);
 
+}
 }
