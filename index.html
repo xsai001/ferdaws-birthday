@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Loading -->
-    <div id="loading">
-        <div class="heart">💖</div>
-        <h1>Preparing your surprise...</h1>
+<div id="loading">
+    <div class="heart">💖</div>
+    <h1>Preparing your surprise...</h1>
+</div>
+
+<div id="main" style="display:none;">
+    <div id="gift">🎁</div>
+    <p>Tap the Gift ❤️</p>
+</div>
+
+<div id="message" style="display:none;">
+    <h1>🎂 Happy Birthday Princess ❤️</h1>
+    <p id="text"></p>
+</div>
+
+<div id="proposal" style="display:none;">
+    <h1>💍 Will you marry me? 💍</h1>
+    <p>Do you want to marry me? ❤️</p>
+
+    <div class="buttons">
+        <button id="yes">❤️ Yes</button>
+        <button id="no">🙈 No</button>
     </div>
+</div>
 
-    <!-- Gift -->
-    <div id="main" style="display:none;">
-        <div id="gift">🎁</div>
-        <p>Tap the Gift ❤️</p>
-    </div>
-
-    <!-- Birthday Message -->
-    <div id="message" style="display:none;">
-        <h1>🎂 Happy Birthday Princess ❤️</h1>
-        <p id="text"></p>
-    </div>
-
-    <!-- Marriage Proposal -->
-    <div id="proposal" style="display:none;">
-        <h1>💍 Will you marry me? 💍</h1>
-
-        <p>Do you want to marry me? ❤️</p>
-
-        <div class="buttons">
-            <button id="yes">💖 Yes</button>
-            <button id="no">🙈 No</button>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
