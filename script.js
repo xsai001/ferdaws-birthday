@@ -27,8 +27,8 @@ gift.onclick = () => {
 
     setTimeout(() => {
 
-        main.classList.add("hide");
-        msg.classList.remove("hide");
+        main.style.display = "none";
+msg.style.display = "flex";
 
         let i = 0;
 
