@@ -15,7 +15,29 @@ gift.onclick=()=>{
         let t=setInterval(()=>{
             text.textContent+=msg[i]||'';
             i++;
-            if(i>=msg.length) clearInterval(t);
+            if (i >= msg.length) {
+    clearInterval(t);
+
+    confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
+
+    setTimeout(() => {
+        const end = document.createElement("div");
+        end.innerHTML = `
+            <h2>👑 Happy Birthday Princess ❤️</h2>
+            <p>With all my love...<br>From Baba 🤍</p>
+        `;
+
+        end.style.marginTop = "40px";
+        end.style.textAlign = "center";
+        end.style.fontSize = "28px";
+
+        message.appendChild(end);
+    }, 1500);
+}
         },35);
     },500)
 };
