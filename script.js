@@ -18,9 +18,10 @@ window.onload = () => {
 };
 
 gift.onclick = () => {
-
     main.style.display = "none";
     message.style.display = "flex";
+
+    text.textContent = "";
 
     let i = 0;
 
@@ -39,75 +40,70 @@ gift.onclick = () => {
                 origin: { y: 0.6 }
             });
 
+            setInterval(createHeart, 400);
+
             setTimeout(() => {
 
-                const end = document.createElement("div");
+                message.innerHTML = `
+                    <h1>👑 Happy Birthday Princess ❤️</h1>
 
-                end.innerHTML = `
-                    <h2>👑 Happy Birthday Princess ❤️</h2>
-                    <p>With all my love...<br>From Baba 🤍</p>
-                    <br><br>
-                    <button id="nextBtn">💍 One Last Surprise ❤️</button>
+                    <p style="font-size:32px;">
+                        With all my love...<br>
+                        From Baba 🤍
+                    </p>
+
+                    <br>
+
+                    <button id="nextBtn">
+                        💍 One Last Surprise ❤️
+                    </button>
                 `;
-
-                end.style.marginTop = "40px";
-
-                message.appendChild(end);
 
                 document.getElementById("nextBtn").onclick = () => {
                     message.style.display = "none";
                     proposal.style.display = "flex";
                 };
 
-                setInterval(createHeart, 400);
-
-            }, 1500);
+            }, 1800);
 
         }
 
     }, 60);
-
 };
 
-function createHeart(){
+function createHeart() {
 
-    const heart=document.createElement("div");
+    const heart = document.createElement("div");
 
-    const hearts=["💖","💕","💗","💓","❤️","🌸"];
+    const hearts = ["💖","💕","💗","💓","❤️","🌸"];
 
-    heart.className="floating-heart";
-    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+    heart.className = "floating-heart";
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
 
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*30) + "px";
 
     document.body.appendChild(heart);
 
-    setTimeout(()=>{
-        heart.remove();
-    },6000);
-
+    setTimeout(() => heart.remove(), 6000);
 }
 
-yes.onclick=()=>{
+yes.onclick = () => {
 
     confetti({
-        particleCount:400,
-        spread:200
+        particleCount: 500,
+        spread: 220
     });
 
-    proposal.innerHTML=`
-        <h1>❤️ Yeeeees!! ❤️</h1>
+    proposal.innerHTML = `
+        <h1 style="color:#ff2d75;">❤️ Yeeeees!! ❤️</h1>
         <h2>I Love You Forever 💍</h2>
         <h3>Thank you my Princess 👑🤍</h3>
     `;
-
 };
 
-no.onmouseover=()=>{
-
-    no.style.position="absolute";
-    no.style.left=Math.random()*80+"%";
-    no.style.top=Math.random()*80+"%";
-
+no.onmouseover = () => {
+    no.style.position = "absolute";
+    no.style.left = Math.random() * 80 + "%";
+    no.style.top = Math.random() * 80 + "%";
 };
