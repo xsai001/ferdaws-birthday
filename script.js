@@ -33,10 +33,28 @@ gift.onclick = () => {
 
     alert("Message Finished");
 
+   const duration = 3000;
+const endTime = Date.now() + duration;
+
+(function frame() {
     confetti({
-        particleCount: 250,
-        spread: 180,
-        origin: { y: 0.6 }
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+    });
+
+    confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+    });
+
+    if (Date.now() < endTime) {
+        requestAnimationFrame(frame);
+    }
+})();
     });
 
     // 👑 الرسالة الأخيرة
