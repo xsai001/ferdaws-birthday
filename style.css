@@ -63,3 +63,68 @@ body{
     75%{transform:scale(1.15);}
     100%{transform:scale(1);}
 }
+.gift-box{
+    position:relative;
+    width:180px;
+    height:180px;
+    cursor:pointer;
+    animation:float 2s ease-in-out infinite;
+}
+
+.box{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    height:120px;
+    background:#ff4f9a;
+    border-radius:10px;
+}
+
+.lid{
+    position:absolute;
+    top:25px;
+    left:-5px;
+    width:190px;
+    height:35px;
+    background:#ff80bf;
+    border-radius:10px;
+    transition:.8s;
+}
+
+.ribbon-v{
+    position:absolute;
+    left:80px;
+    width:20px;
+    height:180px;
+    background:white;
+}
+
+.ribbon-h{
+    position:absolute;
+    top:70px;
+    width:180px;
+    height:20px;
+    background:white;
+}
+
+.bow{
+    position:absolute;
+    top:0;
+    left:68px;
+    width:45px;
+    height:45px;
+    background:white;
+    border-radius:50%;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
