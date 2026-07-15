@@ -29,17 +29,18 @@ gift.onclick = () => {
 
             if (i >= msg.length) {
 
-                clearInterval(typing);
+    clearInterval(typing);
 
-                // 🎉 Confetti
-                confetti({
-                    particleCount: 250,
-                    spread: 180,
-                    origin: { y: 0.6 }
-                });
+    alert("Message Finished");
 
-                // 👑 الرسالة الأخيرة
-                setTimeout(() => {
+    confetti({
+        particleCount: 250,
+        spread: 180,
+        origin: { y: 0.6 }
+    });
+
+    // 👑 الرسالة الأخيرة
+    setTimeout(() => {
 
                     const end = document.createElement("div");
 
