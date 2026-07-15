@@ -29,14 +29,12 @@ gift.onclick = () => {
 
             clearInterval(typing);
 
-            // 🎉 Confetti
             confetti({
-                particleCount: 200,
-                spread: 120,
+                particleCount: 250,
+                spread: 180,
                 origin: { y: 0.6 }
             });
 
-            // 👑 الرسالة الأخيرة
             setTimeout(() => {
 
                 const end = document.createElement("div");
@@ -50,23 +48,22 @@ gift.onclick = () => {
 
                 message.appendChild(end);
 
-                // 💖 قلوب طايرة
                 setInterval(createHeart, 400);
 
             }, 1500);
-
         }
 
-    }, 35);
-
+    }, 60);
 };
 
-function createHeart() {
+function createHeart(){
 
     const heart = document.createElement("div");
 
     heart.className = "floating-heart";
-    heart.innerHTML = "💖";
+
+    const hearts = ["💖","💕","💗","💓","❤️","🌸"];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (20 + Math.random() * 30) + "px";
@@ -76,5 +73,4 @@ function createHeart() {
     setTimeout(() => {
         heart.remove();
     }, 6000);
-
 }
