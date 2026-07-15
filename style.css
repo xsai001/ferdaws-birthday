@@ -6,13 +6,26 @@ body{
 }
 
 #loading-screen,
-#msg,
-#main{
-    display:flex;
+#main,
+#msg{
     flex-direction:column;
     justify-content:center;
     align-items:center;
     height:100vh;
+    text-align:center;
+}
+
+#loading-screen{
+    display:flex;
+}
+
+#main{
+    display:none;
+}
+
+#msg{
+    display:none;
+}
 }
 
 .hide{
