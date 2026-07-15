@@ -1,0 +1,1 @@
+setInterval(()=>{let h=document.createElement("div");h.textContent="💖";h.style.position="fixed";h.style.left=Math.random()*100+"vw";h.style.top="100vh";h.style.fontSize="24px";document.body.appendChild(h);let y=100;let i=setInterval(()=>{y-=1;h.style.top=y+"vh";if(y<0){clearInterval(i);h.remove()}},30)},500);
