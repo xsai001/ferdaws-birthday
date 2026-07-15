@@ -15,68 +15,49 @@ window.onload = () => {
 
 gift.onclick = () => {
 
-    setTimeout(() => {
+    main.style.display = "none";
+    message.style.display = "flex";
 
-        main.style.display = "none";
-        message.style.display = "flex";
+    let i = 0;
 
-        let i = 0;
+    const typing = setInterval(() => {
 
-        const typing = setInterval(() => {
+        text.textContent += msg.charAt(i);
+        i++;
 
-            text.textContent += msg[i] || "";
-            i++;
+        if (i >= msg.length) {
 
-            if (i >= msg.length) {
+            clearInterval(typing);
 
-                clearInterval(typing);
+            // 🎉 Confetti
+            confetti({
+                particleCount: 200,
+                spread: 120,
+                origin: { y: 0.6 }
+            });
 
-                const duration = 3000;
-                const endTime = Date.now() + duration;
+            // 👑 الرسالة الأخيرة
+            setTimeout(() => {
 
-                (function frame() {
-                    confetti({
-                        particleCount: 5,
-                        angle: 60,
-                        spread: 55,
-                        origin: { x: 0 }
-                    });
+                const end = document.createElement("div");
 
-                    confetti({
-                        particleCount: 5,
-                        angle: 120,
-                        spread: 55,
-                        origin: { x: 1 }
-                    });
+                end.innerHTML = `
+                    <h2>👑 Happy Birthday Princess ❤️</h2>
+                    <p>With all my love...<br>From Baba 🤍</p>
+                `;
 
-                    if (Date.now() < endTime) {
-                        requestAnimationFrame(frame);
-                    }
-                })();
+                end.style.marginTop = "40px";
 
-                setTimeout(() => {
+                message.appendChild(end);
 
-                    const end = document.createElement("div");
+                // 💖 قلوب طايرة
+                setInterval(createHeart, 400);
 
-                    end.innerHTML = `
-                        <h2>👑 Happy Birthday Princess ❤️</h2>
-                        <p>With all my love...<br>From Baba 🤍</p>
-                    `;
+            }, 1500);
 
-                    end.style.marginTop = "40px";
-                    end.style.textAlign = "center";
+        }
 
-                    message.appendChild(end);
-
-                    setInterval(createHeart, 400);
-
-                }, 1500);
-
-            }
-
-        }, 35);
-
-    }, 500);
+    }, 35);
 
 };
 
@@ -95,4 +76,5 @@ function createHeart() {
     setTimeout(() => {
         heart.remove();
     }, 6000);
+
 }
