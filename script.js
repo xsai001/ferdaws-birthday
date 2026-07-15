@@ -18,6 +18,7 @@ window.onload = () => {
 };
 
 gift.onclick = () => {
+
     main.style.display = "none";
     message.style.display = "flex";
 
@@ -40,23 +41,22 @@ gift.onclick = () => {
                 origin: { y: 0.6 }
             });
 
-            setInterval(createHeart, 400);
+            const hearts = setInterval(createHeart, 400);
 
             setTimeout(() => {
 
+                clearInterval(hearts);
+
                 message.innerHTML = `
                     <h1>👑 Happy Birthday Princess ❤️</h1>
-
                     <p style="font-size:32px;">
                         With all my love...<br>
                         From Baba 🤍
                     </p>
 
-                    <br>
+                    <br><br>
 
-                    <button id="nextBtn">
-                        💍 One Last Surprise ❤️
-                    </button>
+                    <button id="nextBtn">💍 One Last Surprise ❤️</button>
                 `;
 
                 document.getElementById("nextBtn").onclick = () => {
@@ -64,11 +64,12 @@ gift.onclick = () => {
                     proposal.style.display = "flex";
                 };
 
-            }, 1800);
+            }, 2500);
 
         }
 
     }, 60);
+
 };
 
 function createHeart() {
@@ -78,14 +79,16 @@ function createHeart() {
     const hearts = ["💖","💕","💗","💓","❤️","🌸"];
 
     heart.className = "floating-heart";
-    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = (20 + Math.random()*30) + "px";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 6000);
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
 }
 
 yes.onclick = () => {
@@ -96,14 +99,17 @@ yes.onclick = () => {
     });
 
     proposal.innerHTML = `
-        <h1 style="color:#ff2d75;">❤️ Yeeeees!! ❤️</h1>
+        <h1>❤️ Yeeeees!! ❤️</h1>
         <h2>I Love You Forever 💍</h2>
         <h3>Thank you my Princess 👑🤍</h3>
     `;
+
 };
 
 no.onmouseover = () => {
+
     no.style.position = "absolute";
     no.style.left = Math.random() * 80 + "%";
     no.style.top = Math.random() * 80 + "%";
+
 };
